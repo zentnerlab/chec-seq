@@ -61,7 +61,7 @@ open (OUT, ">$ARGV[1].bed" ) || die "$!\n";
 # ends (i.e., number of fragments x 2)
 foreach $i ( sort keys(%val) ){
 	foreach $j ( sort {$a <=> $b } ( keys(%{$val{$i}}) ) ){
-		print OUT "$i\t $j\t",$j+1,"\t".($val{$i}{$j}*$nbp/$ln)."\n";
+		print OUT $i,"\t",$j,"\t",$j+1,"\t",($val{$i}{$j}*$nbp/$ln),"\n";
 	}
 }
 
